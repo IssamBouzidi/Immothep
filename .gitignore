@@ -158,6 +158,6 @@ dmypy.json
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode
 
 ### Project ###
-data/IN/*
-data/OUT/*
-!data/**/.gitkeep
+client/data/IN/*
+client/data/OUT/*
+!client/data/**/.gitkeep
