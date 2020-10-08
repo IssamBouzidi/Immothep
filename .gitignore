@@ -116,7 +116,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-pythonenv*
 
 # Spyder project settings
 .spyderproject
@@ -139,9 +138,6 @@ dmypy.json
 # pytype static type analyzer
 .pytype/
 
-# profiling data
-.prof
-
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
@@ -153,11 +149,12 @@ dmypy.json
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
-.ionide
+
+data/in/*
+data/out/*
+!*.gitkeep
+
+
+
 
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode
-
-### Project ###
-client/data/IN/*
-client/data/OUT/*
-!client/data/**/.gitkeep
