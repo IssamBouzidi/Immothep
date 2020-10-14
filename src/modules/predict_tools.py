@@ -10,10 +10,9 @@ from sklearn import model_selection
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import explained_variance_score
 
-DATA_IN_FOLDER = 'C:/prairie/projet8/data/cleaned/'
+DATA_IN_FOLDER = 'C:/prairie/projet8-1/Immothep/data/cleaned/'
 
-data = pd.read_csv(os.path.join(DATA_IN_FOLDER, 'cleaned_valeursfoncieres.csv'), encoding='utf-8', sep='|')
-
+data = pd.read_csv(os.path.join(DATA_IN_FOLDER, 'cleaned_valeursfoncieres.csv'), encoding='utf-8', sep=';', decimal='.')
 
 # Check the number of data points in the data set
 print(len(data))
@@ -33,14 +32,18 @@ print(data.isnull().any(axis=1).sum(), ' / ', len(data))
 
 
 
+data = data[data['Nature mutation'] == 'Vente']
+print(len(data))
+data = data[data['Code type local'] == '1.0']
+print(len(data))
 
-features = data.iloc[:,2:].columns.tolist()
-target = data.iloc[:,3].name
+features = data.iloc[:,3:].columns.tolist()
+target = data.iloc[:,2].name
 
 correlations = {}
 for f in features:
     data_temp = data[[f,target]]
-    x1 = data_temp[f].values
+    x1 = data_temp[f].astype(float)
     x2 = data_temp[target].values
     key = f + ' vs ' + target
     correlations[key] = pearsonr(x1,x2)[0]
