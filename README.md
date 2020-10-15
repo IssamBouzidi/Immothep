@@ -17,10 +17,12 @@ Le notebook immothep.ipynb est le premier notebook à executer afin de préparer
 Deux notebooks ont été mis en place un pour estimer les valeurs des appartements `src/appartement_train.ipynb` et un autre pour estimer les valeurs des maisons `src/maison_train.ipynb`  
 
 ## Exploitation de l’api  
-Le lancement de l’api se fait à partir du fichier api/app.py  
-Pour recuperer l’estimation d’un bien, envoyez une requete à l’url suivant  
-`http://localhost:5003/api/estimate/?metre_carre=50&nb_pieces=3&terrain=50&code_postal=63`  
-**Les parametres obligatoires pour envoyer les requtes**  
+Le lancement de l’api se fait à partir du fichier api/app.py
+Pour récupérer l’estimation d’un bien, envoyez une requête à l’url suivant
+`http://localhost:5003/api/estimate/?metre_carre=50&nb_pieces=3&terrain=50&code_postal=63`
+
+
+**Les parametres obligatoires pour envoyer la requête**  
 metre_carre: valeur numérique  
 nb_pieces: valeur numérique  
 terrain: valeur numérique  
