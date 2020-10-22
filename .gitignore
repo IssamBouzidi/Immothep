@@ -152,6 +152,7 @@ dmypy.json
 
 data/in/*
 data/out/*
+data/curated/*
 !*.gitkeep
 
 
