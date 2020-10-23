@@ -54,3 +54,12 @@ def apply_isolation_forest(working_data):
     working_data.drop(df.loc[df['anomaly'] == -1].index, inplace=True)
 
     return working_data
+
+def is_insee_code_exists(insee_code):
+    coord_gps = pd.read_csv(os.path.join(DATA_IN_FOLDER, 'coord_gps_referential.csv'), encoding='utf-8', sep=';')
+    coord_gps['Code INSEE'] = coord_gps['Code INSEE'].astype(str)
+    from_city = coord_gps[coord_gps['Code INSEE'] == str(insee_code)]
+    if len(from_city) == 0:
+        return False
+    else:
+        return True
