@@ -1,10 +1,23 @@
+from genericpath import exists
 import os
 import requests
 
-cwd = os.path.join(os.getcwd(), '..')
-DATASOURCE_PATH = r'https://www.data.gouv.fr/fr/datasets/r/3004168d-bec4-44d9-a781-ef16f41856a2'
-cwd = os.path.join(os.getcwd(), '..')
+def get_root():
+    path = os.getcwd()    
+    root = False
+    i = 0
 
+    while not root:
+        if not os.path.exists(os.path.join(path, 'requirements.txt')):
+            path = os.path.abspath(os.path.join(path, os.pardir))
+        else:
+            root = True
+        i = i+1
+
+    return path
+    
+cwd = get_root()
+DATASOURCE_PATH = r'https://www.data.gouv.fr/fr/datasets/r/3004168d-bec4-44d9-a781-ef16f41856a2'
 DATA_IN_FOLDER = os.path.join(cwd, 'data', 'in')
 DATA_CURATED_FOLDER = os.path.join(cwd, 'data', 'curated')
 DATA_OUT_FOLDER = os.path.join(cwd, 'data', 'out')
