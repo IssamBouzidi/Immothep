@@ -8,7 +8,7 @@ veuillez installer les modules dans le fichier requirements.txt `conda install -
 ## Procédure à suivre pour générer les modèles d'estimation  
 ### Notebooks de préparation et analyse des données
 Ces notebook doivent être executés dans l'ordre suivant:
- [./src/0-main_analysis.ipynb]0-global_analysis.ipynb
+ [./src/0-main_analysis.ipynb](0-global_analysis.ipynb)
  [./src/0-main_analysis.ipynb]1-maison_analysis.ipynb 
  [./src/0-main_analysis.ipynb]2-appartement_analysis.ipynb
 
