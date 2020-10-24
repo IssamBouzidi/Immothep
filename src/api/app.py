@@ -4,9 +4,10 @@ import pandas as pd
 from fastapi import FastAPI
 import uvicorn
 
+#find root directory
 src_dir = os.path.join(os.getcwd(), 'src')
 sys.path.insert(0,src_dir) 
-print()
+
 import modules.prediction_helper as predictor
 import modules.file_helper as file_help
 import modules.data_selector_helper as data_help
@@ -33,6 +34,7 @@ async def read_item(insee_code, range_km, property_type, surface, ground_surface
 
     property_type_name = property_types[property_types['Code type local'] == int(property_type)]['Type local']
 
+    #check input data
     if not str.isnumeric(range_km):
         return 'bad input numeric value for range_km'
 
@@ -48,11 +50,14 @@ async def read_item(insee_code, range_km, property_type, surface, ground_surface
     if not data_help.is_insee_code_exists(insee_code):
         return 'code insee not found'
 
-    if len(property_type_name.values) == 0:
-        return 'bad property type'
+    #only apply estimation for 1 or 2
+    if int(property_type) < 1 or int(property_type) > 2:
+        return 'bad property type - use 1 for houses or 2 for appartments'
 
+    #estimate propoerty
     estimate = predictor.estimate_property(insee_code, int(range_km), property_type_name.values[0], int(surface), int(ground_surface), int(nb_rooms))
 
+    #bad estimate due to non existing code INSEE
     if estimate < 0:
         return 'cannot estimate property. Insee_Code not found'
 
