@@ -9,7 +9,7 @@ veuillez installer les modules dans le fichier requirements.txt `conda install -
 ### Notebooks de préparation et analyse des données
 Ces notebook doivent être executés dans l'ordre suivant:
 
-![0-global_analysis.ipynb](./src/0-main_analysis.ipynb)
+![0-global_analysis.ipynb](./src/0-global_analysis.ipynb)
 
 ![1-maison_analysis.ipynb](./src/0-main_analysis.ipynb)
 
