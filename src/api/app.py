@@ -1,6 +1,5 @@
 import os
 import sys
-from typing import Optional
 import pandas as pd
 from fastapi import FastAPI
 import uvicorn
@@ -57,7 +56,7 @@ async def read_item(insee_code, range_km, property_type, surface, ground_surface
     if estimate < 0:
         return 'cannot estimate property. Insee_Code not found'
 
-    return round(float(estimate), 2)
+    return {'estimation': round(float(estimate), 2)} 
 
 
 if __name__ == "__main__":
