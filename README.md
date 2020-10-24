@@ -32,6 +32,7 @@ Pour récupérer l’estimation d’un bien, envoyez une requête à l’url sui
 `http://127.0.0.1:5003/api/estimate/?insee_code=63113&range_km=15&property_type=1&surface=100&ground_surface=500&nb_rooms=5`
 
 Vous pouvez utiliser le lien `http://localhost:5003/docs` pour exploiter l'api
+
 **Les paramètres obligatoires pour envoyer la requête**  
 **insee_code**: *integer*  (correspondance Code postal/Code Insee disponible ![ici](./data/in/correspondance-code-insee-code-postal.csv))
 
