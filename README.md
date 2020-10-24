@@ -34,7 +34,7 @@ Pour récupérer l’estimation d’un bien, envoyez une requête à l’url sui
 Vous pouvez utiliser le lien `http://localhost:5003/docs` pour exploiter l'api
 
 **Les paramètres obligatoires pour envoyer la requête**  
-**insee_code**: *integer*  (correspondance Code postal/Code Insee disponible ![ici](./data/in/correspondance-code-insee-code-postal.csv))
+**insee_code**: *integer*  (correspondance Code postal/Code Insee disponible ![ici](./data/out/correspondance-code-insee-code-postal_basic.csv))
 
 **range_km**: *integer*  
 
