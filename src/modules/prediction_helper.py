@@ -29,7 +29,7 @@ def estimate_property(code_insee, range, data_type, surface, ground_surface, nb_
 
     working_data = data_help.apply_isolation_forest(working_data)
 
-    xgb = xgboost.XGBRegressor(n_estimators=200, learning_rate=0.3, gamma=0, subsample=0.75, colsample_bytree=1, max_depth=7)
+    xgb = xgboost.XGBRegressor(objective ='reg:squarederror', n_estimators=200, learning_rate=0.3, gamma=0, subsample=0.75, colsample_bytree=1, max_depth=7)
 
     X =  working_data[['Surface reelle bati','Nombre pieces principales','Surface terrain']].values
     y = working_data['Valeur fonciere'].values
