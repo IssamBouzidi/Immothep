@@ -19,7 +19,6 @@ def compute_distance(lat1, lon1, lat2, lon2):
     total_distance = 6372800 * c
     return np.rint(total_distance/1000)
 
-
 def get_sells_from_insee_code(insee_code, property_type, range_km):
     coord_gps = pd.read_csv(os.path.join(DATA_IN_FOLDER, 'coord_gps_referential.csv'), encoding='utf-8', sep=';')
     curated_data = pd.read_csv(os.path.join(DATA_IN_FOLDER, property_type + '_valeursfoncieres.csv'), encoding='utf-8', sep=';')

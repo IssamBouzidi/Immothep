@@ -3,10 +3,6 @@ from mpl_toolkits.basemap import Basemap
 import matplotlib.colors as colors
 import matplotlib.pyplot as plt
 
-
-
-
-
 def get_room_mean(surface, property_type, df):
     nb_rooms = np.mean(df[(df['Surface reelle bati'] < (surface * 1.1)) & (df['Surface reelle bati'] > (surface * 0.9)) &
 (df['Code type local'] ==1)]['Nombre pieces principales'])
